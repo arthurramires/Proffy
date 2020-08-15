@@ -35,8 +35,8 @@ export default class SessionsController {
               subject: String(existingUser[0].id),
               expiresIn: jwt.expiresIn,
             });
-        
-            return response.json({ token: token });
+
+            return response.json({ token: token, user: existingUser[0] });
         
         }catch (err){
             console.log(err)
